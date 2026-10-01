@@ -15,7 +15,7 @@ type Limit struct {
 
 var (
 	users = map[string]*Limit{}
-	mu    sync.Mutex //Mutual Exclusion
+	mu    sync.Mutex //Mutual Exclusion->lock
 )
 
 func rateLimiter(next http.Handler) http.Handler {
